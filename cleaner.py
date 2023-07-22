@@ -1,5 +1,5 @@
 import numpy as np
-import cv2
+import imageio.v3 as Image
 from collections import Counter
 from pathlib import Path
 
@@ -22,7 +22,7 @@ def get_imagefiles(directory='./Image_data/Examples'):
 def cleaner(filename='testimage.jpg'):
 
     # INSERT image pathway: Test image:
-    image = cv2.imread(filename)
+    image = Image.imread(filename)
 
     # Convert the image into an array:
     numpy_array = np.array(image)
@@ -152,7 +152,7 @@ def cleaner(filename='testimage.jpg'):
 
         # INSERT file name: Save the image to a file
         output_filename = 'output_image.jpg'  # Choose a filename and extension for the output image
-        cv2.imwrite(output_filename, output_image)
+        Image.imwrite(output_filename, output_image)
 
         # Display a message indicating the image has been saved
         print(f"The modified image has been saved as {output_filename}")
